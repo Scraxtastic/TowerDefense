@@ -181,26 +181,29 @@ public class BaseHandler : MonoBehaviour
     {
         foreach (Troop currentTroop in troops)
         {
-            Vector3 troopPosition = currentTroop.transform.position;
+            AttackWithTroop(currentTroop);
+        }
+        AttackWithTroop(this.baseTroop);
+    }
 
-            if (headingRight)
+    public void AttackWithTroop(Troop currentTroop)
+    {
+        Vector3 troopPosition = currentTroop.transform.position;
+
+        if (headingRight)
+        {
+            if (troopPosition.x + currentTroop.range >= enemyX)
             {
-                if (troopPosition.x + currentTroop.range >= enemyX)
-                {
-                    TryAttackEnemy(currentTroop);
-                }
+                TryAttackEnemy(currentTroop);
             }
-            else
+        }
+        else
+        {
+            // don't change the order of the calculations, since they could fail due to floating point
+            if (enemyTroop.transform.position.x + currentTroop.range >=
+                currentTroop.transform.position.x - currentTroop.borderDistance)
             {
-                // if (troopPosition.x <= enemyX + currentTroop.range)
-                // {
-                //     TryAttackEnemy(currentTroop);
-                // }
-                if (enemyTroop.transform.position.x + currentTroop.range >=
-                    currentTroop.transform.position.x - currentTroop.borderDistance)
-                {
-                    TryAttackEnemy(currentTroop);
-                }
+                TryAttackEnemy(currentTroop);
             }
         }
     }
