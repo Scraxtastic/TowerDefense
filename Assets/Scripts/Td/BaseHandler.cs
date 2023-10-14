@@ -10,18 +10,27 @@ public class BaseHandler : MonoBehaviour
     public float troopSpeedMultiplier = 1;
     public BaseHandler enemyBase;
     public List<Troop> troops = new List<Troop>();
+    [Header("Money")] public float money = 100;
+    public float moneyEarnRate = 3;
     [Header("Set automagically")] public float enemyX;
     public Troop enemyTroop;
     public bool haveTroopsBeenUpdatedThisFrame = false;
     public Troop baseTroop;
+    private bool active = true;
     [Header("Set by enemy")] public bool isAnyTroopDead;
 
     private void Start()
     {
         baseTroop = GetComponent<Troop>();
     }
+
     private void Update()
     {
+        if (!active)
+        {
+            return;
+        }
+
         haveTroopsBeenUpdatedThisFrame = false;
         enemyX = enemyBase.GetNearestTroopX();
         enemyTroop = enemyBase.GetNearestTroop();
@@ -164,6 +173,7 @@ public class BaseHandler : MonoBehaviour
         {
             return baseTroop;
         }
+
         return troops[0];
     }
 
@@ -214,6 +224,7 @@ public class BaseHandler : MonoBehaviour
         foreach (Troop troopToRemove in troopsToRemove)
         {
             troopToRemove.HasDied();
+            enemyBase.money += troopToRemove.moneyDropOnDeath;
             troops.Remove(troopToRemove);
             Destroy(troopToRemove.gameObject);
         }

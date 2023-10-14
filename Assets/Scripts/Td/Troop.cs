@@ -15,6 +15,7 @@ public class Troop : MonoBehaviour
     public bool usesBullet;
     public float attackSpeed;
     public float attackDamage;
+    public float moneyDropOnDeath = 0;
     public Color gizmoColor = Color.black;
     [Header("DO NOT CHANGE")] public float lastAttackTime;
 

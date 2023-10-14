@@ -7,5 +7,6 @@ public struct SpawnableTroop
 {
     public string name;
     public float requiredMoney;
+    public float moneyEarnedOnDeath;
     public GameObject troop;
 }
