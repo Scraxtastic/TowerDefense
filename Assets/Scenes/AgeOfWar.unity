@@ -312,10 +312,10 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   borderDistance: 0.5
-  range: 0
+  range: 4
   usesBullet: 0
-  attackSpeed: 0
-  attackDamage: 0
+  attackSpeed: 5000
+  attackDamage: 0.1
   moneyDropOnDeath: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   lastAttackTime: 0
@@ -734,7 +734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -20, y: 0.69}
+  m_AnchoredPosition: {x: 0, y: 0.69}
   m_SizeDelta: {x: 163.4538, y: 15.0511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646950081
@@ -2432,12 +2432,12 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   borderDistance: 0.5
-  range: 0
+  range: 4
   usesBullet: 0
-  attackSpeed: 0
-  attackDamage: 0
+  attackSpeed: 5000
+  attackDamage: 0.1
   moneyDropOnDeath: 0
-  gizmoColor: {r: 1, g: 0, b: 0, a: 1}
+  gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   lastAttackTime: 0
 --- !u!1 &1400079857
 GameObject:
@@ -2898,7 +2898,7 @@ MonoBehaviour:
   range: 3
   usesBullet: 0
   attackSpeed: 500
-  attackDamage: 1
+  attackDamage: 1.5
   moneyDropOnDeath: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   lastAttackTime: 0
@@ -3866,7 +3866,7 @@ MonoBehaviour:
   range: 0.5
   usesBullet: 0
   attackSpeed: 500
-  attackDamage: 1
+  attackDamage: 1.5
   moneyDropOnDeath: 0
   gizmoColor: {r: 0, g: 0, b: 0, a: 1}
   lastAttackTime: 0
